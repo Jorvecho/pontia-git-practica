@@ -1,0 +1,14 @@
+name: Practica Git
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        description: 'Mensaje a mostrar'
+        required: true
+        default: 'Buenos días profe!'
+jobs:
+  show-message:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar mensaje
+        run: echo "${{ github.event.inputs.message }}"
